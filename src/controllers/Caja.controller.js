@@ -1,4 +1,5 @@
 import Caja from "../models/Caja.model";
+const spawn = require("child_process").spawn;
 const cajaController = {};
 
 // get Caja
@@ -36,6 +37,17 @@ cajaController.deleteCaja = async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+};
+
+cajaController.startCajonPlugin = async (req, res) => {
+  const ls = spawn("cmd.exe", ["/c", "cajonplugin.bat"]);
+  ls.stdout.on("data", (data) => {
+    console.log("stdout: " + data);
+  });
+  ls.stderr.on("data", (data) => {
+    console.log("stderr: " + data);
+  });
+  res.json({ status: "done" });
 };
 
 export default cajaController;

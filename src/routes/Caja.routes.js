@@ -11,4 +11,7 @@ router.post("/caja", caja.createCaja);
 // delete
 router.delete("/caja/:id", caja.deleteCaja);
 
+// open cajon plugin
+router.post("/caja/starcajonplugin", caja.startCajonPlugin);
+
 export default router;
