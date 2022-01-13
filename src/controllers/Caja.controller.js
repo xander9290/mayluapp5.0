@@ -14,8 +14,13 @@ cajaController.getCajas = async (req, res) => {
 // create Caja
 cajaController.createCaja = async (req, res) => {
   try {
-    const cajas = await new Caja(req.body);
-    const newCaja = await cajas.save();
+    const cajas = await Caja.find().lean();
+    const genCaja = {
+      ...req.body,
+      folio: cajas.length + 1,
+    };
+    const caja = await new Caja(genCaja);
+    const newCaja = await caja.save();
     res.json(newCaja);
   } catch (error) {
     console.log(error);

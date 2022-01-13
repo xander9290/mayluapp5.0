@@ -17,4 +17,7 @@ router.put("/operadores/:id", operador.updateOperador);
 // delete
 router.delete("/operadores/:id", operador.deleteOperador);
 
+// exit
+router.post("/operadores/exit", operador.exitProcess);
+
 export default router;

@@ -4,7 +4,7 @@ import productos from "./Producto.routes";
 import clientes from "./Cliente.routes";
 import operadores from "./Operador.routes";
 import cuentas from "./Cuenta.routes";
-import cajas from "./Cajas.routes";
+import cajas from "./Caja.routes";
 
 const routes = {
   categorias,

@@ -77,4 +77,9 @@ operadorController.deleteOperador = async (req, res) => {
   }
 };
 
+// exit process
+operadorController.exitProcess = async (req, res) => {
+  process.kill(process.pid, "SIGTERM");
+};
+
 export default operadorController;

@@ -9,6 +9,6 @@ router.get("/caja", caja.getCajas);
 router.post("/caja", caja.createCaja);
 
 // delete
-router.delete("/caja", caja.deleteCaja);
+router.delete("/caja/:id", caja.deleteCaja);
 
 export default router;
