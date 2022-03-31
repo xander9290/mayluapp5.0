@@ -5,6 +5,7 @@ import clientes from "./Cliente.routes";
 import operadores from "./Operador.routes";
 import cuentas from "./Cuenta.routes";
 import cajas from "./Caja.routes";
+import compuestos from "./Compuesto.routes";
 
 const routes = {
   categorias,
@@ -14,6 +15,7 @@ const routes = {
   operadores,
   cuentas,
   cajas,
+  compuestos,
 };
 
 export default routes;

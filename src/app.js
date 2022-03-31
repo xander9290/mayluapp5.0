@@ -24,6 +24,7 @@ app.use(routes.clientes);
 app.use(routes.operadores);
 app.use(routes.cuentas);
 app.use(routes.cajas);
+app.use(routes.compuestos);
 
 // Static Files
 app.use(express.static(path.join(__dirname, "build")));

@@ -15,6 +15,7 @@ const productoSchema = new Schema(
     },
     subcategoriaId: { type: String, required: true },
     areaNota: { type: String, required: true },
+    compuestos: { type: Array, default: [] },
     codigo: { type: Number, required: true },
     contable: { type: Boolean, required: true, default: true },
     createdBy: { type: String, required: true },
