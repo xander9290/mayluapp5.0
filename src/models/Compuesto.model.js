@@ -17,6 +17,10 @@ const compuestoSchema = new Schema(
       required: true,
       trim: true,
     },
+    price: { type: Number, required: true, default: 0 },
+    punitario: { type: Number, required: true, default: 0 },
+    insumo: { type: Number, required: true, default: 0 },
+    rendimiento: { type: Number, required: true, default: 0 },
   },
   {
     timestamps: { updatedAt: false },
