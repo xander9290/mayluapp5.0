@@ -8,19 +8,21 @@ const compuestoSchema = new Schema(
       trim: true,
     },
     unidad: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    medida: {
       type: Number,
       required: true,
       trim: true,
     },
+    medida: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     price: { type: Number, required: true, default: 0 },
-    punitario: { type: Number, required: true, default: 0 },
+    precioInsumo: { type: Number, required: true, default: 0 },
     insumo: { type: Number, required: true, default: 0 },
     rendimiento: { type: Number, required: true, default: 0 },
+    insumoId: { type: String, required: true },
+    categoriaId: { type: String, required: true },
   },
   {
     timestamps: { updatedAt: false },

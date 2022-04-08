@@ -3,7 +3,6 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 import routes from "./routes";
-import { apps } from "open";
 
 const app = express();
 
@@ -24,6 +23,7 @@ app.use(routes.clientes);
 app.use(routes.operadores);
 app.use(routes.cuentas);
 app.use(routes.cajas);
+app.use(routes.almacenes);
 app.use(routes.compuestos);
 
 // Static Files

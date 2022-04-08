@@ -5,6 +5,7 @@ import clientes from "./Cliente.routes";
 import operadores from "./Operador.routes";
 import cuentas from "./Cuenta.routes";
 import cajas from "./Caja.routes";
+import almacenes from "./Almacen.routes";
 import compuestos from "./Compuesto.routes";
 
 const routes = {
@@ -15,6 +16,7 @@ const routes = {
   operadores,
   cuentas,
   cajas,
+  almacenes,
   compuestos,
 };
 
