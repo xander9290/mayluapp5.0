@@ -48,6 +48,32 @@ operadorController.loginOperador = async (req, res) => {
   }
 };
 
+operadorController.autorizar = async (req, res) => {
+  try {
+    const { pswd } = req.body;
+    let auth = false;
+    let index;
+    let master = null;
+    const findMasters = await Operador.find({ rol: "master" });
+    for (let i = 0; i < findMasters.length; i++) {
+      let match = await bcrypt.compare(pswd, findMasters[i].pswd);
+      if (match) {
+        auth = true;
+        index = i;
+        break;
+      }
+    }
+    if (auth) {
+      master = findMasters[index].name;
+    }
+    res.json({ auth, master });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const execMasters = (masters) => {};
+
 // update Operador
 operadorController.updateOperador = async (req, res) => {
   try {

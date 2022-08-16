@@ -3,7 +3,7 @@ import cuenta from "../controllers/Cuenta.controller";
 const router = Router();
 
 // get cuentas Abiertas
-router.get("/cuentas/abiertas", cuenta.getCuentasAbiertas);
+router.get("/cuentas/activas", cuenta.getCuentasAbiertas);
 // get cuentas por fecha
 router.get("/cuentas/porfechas/:gte/:lte", cuenta.getCuentaPorFecha);
 // get cuentas por historial
