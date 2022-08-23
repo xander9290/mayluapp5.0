@@ -5,6 +5,7 @@ import "./database";
 import { Server as SocketServer } from "socket.io";
 
 const server = http.createServer(app);
+
 const io = new SocketServer(server, {
   cors: {
     origin: "*",
@@ -12,6 +13,7 @@ const io = new SocketServer(server, {
   },
 });
 
+const tempId = {};
 io.on("connection", (socket) => {
   socket.on("newCuenta", (newCuenta) => {
     socket.broadcast.emit("newCuenta", newCuenta);
@@ -21,18 +23,25 @@ io.on("connection", (socket) => {
     socket.broadcast.emit("updatedCuenta", changedCuenta);
   });
 
-  socket.on("cuentaOcupada", (cuentaId) => {
-    socket.broadcast.emit("cuentaOcupada", cuentaId);
+  socket.on("cuentaBloqueada", (cuentaId) => {
+    tempId[socket.id] = cuentaId;
+    socket.broadcast.emit("cuentaBloqueada", cuentaId);
+    console.log(tempId);
+  });
+
+  socket.on("cuentaDesbloquear", (cuentaId) => {
+    socket.broadcast.emit("cuentaDesbloquear", cuentaId);
   });
 
   socket.on("disconnect", () => {
-    socket.broadcast.emit("cuentaOcupada", "");
+    socket.broadcast.emit("cuentaDesbloquear", tempId[socket.id]);
   });
 });
 
 server.listen(app.get("port"), () => {
   console.log("Servidor iniciado en puerto ", app.get("port"));
 });
+
 (async () => {
   console.log("Iniciando aplicación");
   await open(`http://localhost:${app.get("port")}`);
