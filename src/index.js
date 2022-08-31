@@ -26,7 +26,6 @@ io.on("connection", (socket) => {
   socket.on("cuentaBloqueada", (cuentaId) => {
     tempId[socket.id] = cuentaId;
     socket.broadcast.emit("cuentaBloqueada", cuentaId);
-    console.log(tempId);
   });
 
   socket.on("cuentaDesbloquear", (cuentaId) => {
