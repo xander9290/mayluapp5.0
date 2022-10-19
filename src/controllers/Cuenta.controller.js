@@ -1,4 +1,4 @@
-import Cuenta from "../models/Cuenta.model";
+import Cuenta from "../models/Cuenta.model.js";
 const cuentaController = {};
 
 // get cuentas fecha Abiertas

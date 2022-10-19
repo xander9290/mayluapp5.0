@@ -1,4 +1,4 @@
-import Subcategoria from "../models/Subcategoria.model";
+import Subcategoria from "../models/Subcategoria.model.js";
 const subcategoriaController = {};
 
 // Get categorias

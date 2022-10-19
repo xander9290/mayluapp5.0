@@ -1,5 +1,5 @@
 import { Router } from "express";
-import caja from "../controllers/Caja.controller";
+import caja from "../controllers/Caja.controller.js";
 const router = Router();
 
 // get

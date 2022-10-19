@@ -1,4 +1,4 @@
-import Actividad from "../models/Actividad.model";
+import Actividad from "../models/Actividad.model.js";
 const actividadCrontroller = {};
 
 // get activad por criterio

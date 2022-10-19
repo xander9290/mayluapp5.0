@@ -1,5 +1,5 @@
 import { Router } from "express";
-import compuesto from "../controllers/Compuesto.controller";
+import compuesto from "../controllers/Compuesto.controller.js";
 const router = Router();
 
 // get

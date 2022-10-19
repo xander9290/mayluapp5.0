@@ -1,5 +1,5 @@
 import { Router } from "express";
-import cuenta from "../controllers/Cuenta.controller";
+import cuenta from "../controllers/Cuenta.controller.js";
 const router = Router();
 
 // get cuentas Abiertas

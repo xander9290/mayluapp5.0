@@ -1,4 +1,4 @@
-import Categoria from "../models/Categoria.model";
+import Categoria from "../models/Categoria.model.js";
 const categoriaController = {};
 
 // Get categorias

@@ -2,7 +2,9 @@ import path from "path";
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
-import routes from "./routes";
+import routes from "./routes/index.js";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 
@@ -27,6 +29,7 @@ app.use(routes.almacenes);
 app.use(routes.compuestos);
 
 // Static Files
-app.use(express.static(path.join(__dirname, "build")));
+const __dirname = dirname(fileURLToPath(import.meta.url));
+app.use(express.static(join(__dirname, "build")));
 
 export default app;

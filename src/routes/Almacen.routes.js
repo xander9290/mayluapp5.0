@@ -1,5 +1,5 @@
 import { Router } from "express";
-import almacenController from "../controllers/Almacen.controller";
+import almacenController from "../controllers/Almacen.controller.js";
 const router = Router();
 
 // get

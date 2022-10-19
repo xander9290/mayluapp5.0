@@ -1,6 +1,6 @@
 import { Router } from "express";
-import operador from "../controllers/Operador.controller";
-import actividad from "../controllers/Actividad.controller";
+import operador from "../controllers/Operador.controller.js";
+import actividad from "../controllers/Actividad.controller.js";
 const router = Router();
 
 // get

@@ -1,4 +1,4 @@
-import AlmacenModel from "../models/Almacen.model";
+import AlmacenModel from "../models/Almacen.model.js";
 const almacenController = {};
 
 // get almacenes

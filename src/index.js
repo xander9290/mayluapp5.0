@@ -1,7 +1,7 @@
-import app from "./app";
+import app from "./app.js";
 import http from "http";
 import open from "open";
-import "./database";
+import "./database.js";
 import { Server as SocketServer } from "socket.io";
 
 const server = http.createServer(app);

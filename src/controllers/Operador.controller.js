@@ -1,4 +1,4 @@
-import Operador from "../models/Operador.model";
+import Operador from "../models/Operador.model.js";
 import bcrypt from "bcrypt";
 const operadorController = {};
 

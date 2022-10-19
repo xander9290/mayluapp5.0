@@ -1,5 +1,6 @@
-import Caja from "../models/Caja.model";
-const spawn = require("child_process").spawn;
+import Caja from "../models/Caja.model.js";
+// const spawn = require("child_process").spawn;
+import { spawn } from "child_process";
 const cajaController = {};
 
 // get Caja

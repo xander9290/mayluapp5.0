@@ -1,4 +1,4 @@
-import Producto from "../models/Producto.model";
+import Producto from "../models/Producto.model.js";
 const productoController = {};
 
 // get Productos

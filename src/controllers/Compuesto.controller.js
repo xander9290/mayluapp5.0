@@ -1,4 +1,4 @@
-import Compuesto from "../models/Compuesto.model";
+import Compuesto from "../models/Compuesto.model.js";
 const compuestroController = {};
 
 // get Compuestos
