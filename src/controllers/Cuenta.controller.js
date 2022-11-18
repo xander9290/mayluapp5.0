@@ -91,6 +91,35 @@ cuentaController.createCuenta = async (req, res) => {
   }
 };
 
+// get Items
+cuentaController.getItems = async (req, res) => {
+  try {
+    const { cancelados } = req.query;
+    const { gte, lte } = req.params;
+    let list;
+    const items = [];
+    const cuentas = await Cuenta.find({
+      fecha: { $gte: gte, $lte: lte },
+    }).lean();
+    const cuentasActivas = cuentas.filter(
+      (cuenta) => cuenta.estado !== "cancelado"
+    );
+    cuentasActivas.forEach((cuenta) => {
+      cuenta.items.forEach((item) => {
+        items.push(item);
+      });
+    });
+    if (cancelados === "true") {
+      list = items;
+    } else {
+      list = items.filter((item) => item.cancelado === false);
+    }
+    res.json({ data: list });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 // update Cuenta
 cuentaController.updateCuenta = async (req, res) => {
   try {

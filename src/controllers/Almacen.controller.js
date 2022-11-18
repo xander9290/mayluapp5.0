@@ -5,7 +5,7 @@ const almacenController = {};
 almacenController.getAlmacenes = async (req, res) => {
   try {
     const almacenes = await AlmacenModel.find().lean().sort({ name: "asc" });
-    res.json(almacenes);
+    res.json({ data: almacenes });
   } catch (error) {
     console.log(error);
   }

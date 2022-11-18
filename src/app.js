@@ -27,6 +27,7 @@ app.use(routes.cuentas);
 app.use(routes.cajas);
 app.use(routes.almacenes);
 app.use(routes.compuestos);
+app.use(routes.entradas);
 
 // Static Files
 const __dirname = dirname(fileURLToPath(import.meta.url));

@@ -7,6 +7,7 @@ import cuentas from "./Cuenta.routes.js";
 import cajas from "./Caja.routes.js";
 import almacenes from "./Almacen.routes.js";
 import compuestos from "./Compuesto.routes.js";
+import entradas from "./Entrada.routes.js";
 
 const routes = {
   categorias,
@@ -18,6 +19,7 @@ const routes = {
   cajas,
   almacenes,
   compuestos,
+  entradas,
 };
 
 export default routes;

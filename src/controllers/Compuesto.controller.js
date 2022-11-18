@@ -4,7 +4,7 @@ const compuestroController = {};
 // get Compuestos
 compuestroController.getCompuestos = async (req, res) => {
   const compuestos = await Compuesto.find().lean().sort({ name: "asc" });
-  res.json(compuestos);
+  res.json({ data: compuestos });
 };
 
 // create Compuesto
